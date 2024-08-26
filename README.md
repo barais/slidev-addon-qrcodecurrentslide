@@ -20,18 +20,9 @@ addons:
  :clearable="true" 
  displayResults="poll">
 
-```js
-() => 'Red';
-```
-
-```js
-() => 'Green';
-```
-
-```js
-() => 'Blue';
-```
-
+- **Red**
+- **Green**
+- **Blue**
 
 </Poll>
 -->
