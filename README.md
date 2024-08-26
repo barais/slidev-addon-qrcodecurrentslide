@@ -85,8 +85,38 @@ addons:
     :width="300"
     :height="300"
     color="blue"
+    image="logo.svg"
 />
+<!-- logo must be pushed in public folder -->
 ```
+
+Props for the components are the [following](https://github.com/barais/slidev-addon-qrcodecurrentslide/blob/main/components/QrCodeCurrentSlide.vue#L11)
+
+```ts
+
+interface QRCodeOption { 
+    width : number,
+    height: number,
+    color: string,
+    image:string,
+    type: string,
+    margin:number
+    dotsType:DotType,
+    data:string
+}
+
+const props = withDefaults(defineProps<QRCodeOption>(), {
+    width: 200,
+    height: 200,
+    color:"blue",
+    image : "logo.svg",
+    margin: 5,
+    dotsType: "extra-rounded",
+    data:window.location.href
+});
+
+```
+
 
 > Find more about options in [qr-code-styling repo](https://github.com/kozakdenys/qr-code-styling/tree/master?tab=readme-ov-file#qrcodestyling-instance)
 
