@@ -1,9 +1,9 @@
 {
-    "name": "slidev-addon-qrcode",
+    "name": "slidev-addon-qrcodecurrentslide",
     "version": "1.0.2",
     "type": "module",
-    "author": "kravetsone",
-    "description": "QRCode component for slidev",
+    "author": "barais",
+    "description": "QRCode component for slidev with default href as data (fork of slidev-addon-qrcode)",
     "devDependencies": {
         "@slidev/cli": "^0.48.2",
         "@slidev/theme-default": "^0.25.0",

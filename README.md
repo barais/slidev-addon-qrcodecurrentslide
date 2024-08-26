@@ -1,6 +1,6 @@
-# slidev-addon-qrcode
+# slidev-addon-qrcodecurrentslide
 
-QR-Code component for [sli.dev](https://sli.dev/)
+QR-Code component for [sli.dev](https://sli.dev/) with default url to current location (used for poll) (fork of [kravetsone/slidev-addon-qrcode](https://github.com/kravetsone/slidev-addon-qrcode) )
 
 ![example](https://raw.githubusercontent.com/kravetsone/slidev-addon-qrcode/main/example-export/001.png)
 
@@ -8,31 +8,53 @@ QR-Code component for [sli.dev](https://sli.dev/)
 ---
 layout: center
 addons:
-    - slidev-addon-qrcode
+    - slidev-addon-qrcodecurrentslide
 ---
 
-<div class="flex flex-col items-center">
+<div class="grid grid-cols-3 gap-4 w-full">
+  <div class="col-span-2">
+<!-- Use with slidev poll component addon
+<Poll question="What is your favorite color ?" 
+:correctAnswer="[0]"
+:controlled="true"
+ :clearable="true" 
+ displayResults="poll">
 
-# slidev-addon-qrcode
+```js
+() => 'Red';
+```
 
-<QRCode
+```js
+() => 'Green';
+```
+
+```js
+() => 'Blue';
+```
+
+
+</Poll>
+-->
+
+# What is your favorite color ?
+  
+  </div>
+
+
+  <div class="col-span-1">
+<QrCodeCurrentSlide
     :width="300"
     :height="300"
-    type="svg"
-    data="https://sli.dev"
-    :margin="10"
-    :imageOptions="{ margin: 10 }"
-    :dotsOptions="{ type: 'extra-rounded', color: 'purple' }"
-    image="/logo.svg"
+    color="blue"
 />
-
+</div>
 </div>
 ```
 
 ## Installation
 
 ```bash
-npm i slidev-addon-qrcode
+npm i slidev-addon-qrcodecurrentslide
 ```
 
 ### Usage
@@ -41,7 +63,7 @@ npm i slidev-addon-qrcode
 
 ```yaml
 addons:
-    - slidev-addon-qrcode
+    - slidev-addon-qrcodecurrentslide
 ```
 
 -   or in `package.json`
@@ -49,7 +71,7 @@ addons:
 ```json
  "slidev": {
     "addons": [
-      "slidev-addon-qrcode"
+      "slidev-addon-qrcodecurrentslide"
     ]
   },
 ```
@@ -59,15 +81,10 @@ addons:
 ### QRCode
 
 ```vue
-<QRCode
+<QrCodeCurrentSlide
     :width="300"
     :height="300"
-    type="svg"
-    data="https://sli.dev"
-    :margin="10"
-    :imageOptions="{ margin: 10 }"
-    :dotsOptions="{ type: 'extra-rounded', color: 'purple' }"
-    image="/logo.svg"
+    color="blue"
 />
 ```
 
